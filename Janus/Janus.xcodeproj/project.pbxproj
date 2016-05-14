@@ -1,0 +1,373 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		135F295BA1137E35D1537D2B /* Pods_Janus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8836BFBB63E68691DF1B719 /* Pods_Janus.framework */; };
+		77CC1A141CBAE13300060212 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CC1A131CBAE13300060212 /* AppDelegate.swift */; };
+		77CC1A161CBAE13300060212 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CC1A151CBAE13300060212 /* ViewController.swift */; };
+		77CC1A191CBAE13300060212 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77CC1A171CBAE13300060212 /* Main.storyboard */; };
+		77CC1A1B1CBAE13300060212 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77CC1A1A1CBAE13300060212 /* Assets.xcassets */; };
+		77CC1A1E1CBAE13300060212 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77CC1A1C1CBAE13300060212 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		71ED9DDC75959F8EB18F43C4 /* Pods-Janus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Janus.release.xcconfig"; path = "Pods/Target Support Files/Pods-Janus/Pods-Janus.release.xcconfig"; sourceTree = "<group>"; };
+		77CC1A101CBAE13300060212 /* Janus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Janus.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		77CC1A131CBAE13300060212 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		77CC1A151CBAE13300060212 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		77CC1A181CBAE13300060212 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		77CC1A1A1CBAE13300060212 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		77CC1A1D1CBAE13300060212 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		77CC1A1F1CBAE13300060212 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92BFF5CDC0F4F2D05203AC97 /* Pods-Janus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Janus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Janus/Pods-Janus.debug.xcconfig"; sourceTree = "<group>"; };
+		D8836BFBB63E68691DF1B719 /* Pods_Janus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Janus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		77CC1A0D1CBAE13300060212 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				135F295BA1137E35D1537D2B /* Pods_Janus.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4C85CF2E3055393A42FA8ED1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D8836BFBB63E68691DF1B719 /* Pods_Janus.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		77CC1A071CBAE13300060212 = {
+			isa = PBXGroup;
+			children = (
+				77CC1A121CBAE13300060212 /* Janus */,
+				77CC1A111CBAE13300060212 /* Products */,
+				B25AC3245A1A11C82BD1DDF2 /* Pods */,
+				4C85CF2E3055393A42FA8ED1 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		77CC1A111CBAE13300060212 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				77CC1A101CBAE13300060212 /* Janus.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		77CC1A121CBAE13300060212 /* Janus */ = {
+			isa = PBXGroup;
+			children = (
+				77CC1A131CBAE13300060212 /* AppDelegate.swift */,
+				77CC1A151CBAE13300060212 /* ViewController.swift */,
+				77CC1A171CBAE13300060212 /* Main.storyboard */,
+				77CC1A1A1CBAE13300060212 /* Assets.xcassets */,
+				77CC1A1C1CBAE13300060212 /* LaunchScreen.storyboard */,
+				77CC1A1F1CBAE13300060212 /* Info.plist */,
+			);
+			path = Janus;
+			sourceTree = "<group>";
+		};
+		B25AC3245A1A11C82BD1DDF2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				92BFF5CDC0F4F2D05203AC97 /* Pods-Janus.debug.xcconfig */,
+				71ED9DDC75959F8EB18F43C4 /* Pods-Janus.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		77CC1A0F1CBAE13300060212 /* Janus */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 77CC1A221CBAE13300060212 /* Build configuration list for PBXNativeTarget "Janus" */;
+			buildPhases = (
+				4E7FA60FA83791A333AC3452 /* 📦 Check Pods Manifest.lock */,
+				77CC1A0C1CBAE13300060212 /* Sources */,
+				77CC1A0D1CBAE13300060212 /* Frameworks */,
+				77CC1A0E1CBAE13300060212 /* Resources */,
+				DF1CB3B9F7C0D863D77CF13E /* 📦 Embed Pods Frameworks */,
+				2D2E2A2523CDFA6E438154DC /* 📦 Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Janus;
+			productName = Janus;
+			productReference = 77CC1A101CBAE13300060212 /* Janus.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		77CC1A081CBAE13300060212 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = ClearlyTech;
+				TargetAttributes = {
+					77CC1A0F1CBAE13300060212 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+				};
+			};
+			buildConfigurationList = 77CC1A0B1CBAE13300060212 /* Build configuration list for PBXProject "Janus" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 77CC1A071CBAE13300060212;
+			productRefGroup = 77CC1A111CBAE13300060212 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				77CC1A0F1CBAE13300060212 /* Janus */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		77CC1A0E1CBAE13300060212 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				77CC1A1E1CBAE13300060212 /* LaunchScreen.storyboard in Resources */,
+				77CC1A1B1CBAE13300060212 /* Assets.xcassets in Resources */,
+				77CC1A191CBAE13300060212 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2D2E2A2523CDFA6E438154DC /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Janus/Pods-Janus-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4E7FA60FA83791A333AC3452 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DF1CB3B9F7C0D863D77CF13E /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Janus/Pods-Janus-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		77CC1A0C1CBAE13300060212 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				77CC1A161CBAE13300060212 /* ViewController.swift in Sources */,
+				77CC1A141CBAE13300060212 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		77CC1A171CBAE13300060212 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				77CC1A181CBAE13300060212 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		77CC1A1C1CBAE13300060212 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				77CC1A1D1CBAE13300060212 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		77CC1A201CBAE13300060212 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		77CC1A211CBAE13300060212 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		77CC1A231CBAE13300060212 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92BFF5CDC0F4F2D05203AC97 /* Pods-Janus.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Janus/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.clearlytech.Janus;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		77CC1A241CBAE13300060212 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 71ED9DDC75959F8EB18F43C4 /* Pods-Janus.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Janus/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.clearlytech.Janus;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		77CC1A0B1CBAE13300060212 /* Build configuration list for PBXProject "Janus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				77CC1A201CBAE13300060212 /* Debug */,
+				77CC1A211CBAE13300060212 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		77CC1A221CBAE13300060212 /* Build configuration list for PBXNativeTarget "Janus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				77CC1A231CBAE13300060212 /* Debug */,
+				77CC1A241CBAE13300060212 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 77CC1A081CBAE13300060212 /* Project object */;
+}
