@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
   let IMAGE_URL = "https://clearlytech.s3.amazonaws.com/garage-image.jpg"
-  let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+  let appDelegate = UIApplication.shared.delegate as! AppDelegate
   
   @IBOutlet weak var doorOneButton: UIButton!
   @IBOutlet weak var doorTwoButton: UIButton!
@@ -21,7 +21,7 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
-//    self.refreshImageButtonPressed()
+    self.newImageReady()
   }
 
   override func didReceiveMemoryWarning() {
@@ -29,13 +29,13 @@ class ViewController: UIViewController {
     // Dispose of any resources that can be recreated.
   }
 
-  @IBAction func doorButtonPressed(button: UIButton) {
+  @IBAction func doorButtonPressed(_ button: UIButton) {
     let buttonIndex = (button === doorTwoButton ? 1 : 0)
     print("door button pressed: \(buttonIndex)")
     appDelegate.publishDoorButtonMessage(buttonIndex)
   }
 
-  @IBAction func refreshImageButtonPressed(button: UIButton? = nil) {
+  @IBAction func refreshImageButtonPressed(_ button: UIButton? = nil) {
     print("refresh image button pressed")
     refreshSpinner.startAnimating()
     appDelegate.publishCaptureImageMessage()
@@ -43,18 +43,18 @@ class ViewController: UIViewController {
 
   func newImageReady() {
     print("new image ready, loading")
+    refreshSpinner.stopAnimating()
     load_image(IMAGE_URL)
   }
   
-  func load_image(urlString:String)
+  func load_image(_ urlString:String)
   {
-    let imgURL: NSURL = NSURL(string: urlString)!
-    let request: NSURLRequest = NSURLRequest(URL: imgURL)
+    let imgURL: URL = URL(string: urlString)!
+    let request: URLRequest = URLRequest(url: imgURL, cachePolicy: NSURLRequest.CachePolicy.reloadIgnoringLocalCacheData, timeoutInterval: 5.0)
     
-    let session = NSURLSession.sharedSession()
-    let task = session.dataTaskWithRequest(request){
+    let session = URLSession.shared
+    let task = session.dataTask(with: request, completionHandler: {
       (data, response, error) -> Void in
-      self.refreshSpinner.stopAnimating()
       
       if (error == nil && data != nil)
       {
@@ -63,10 +63,10 @@ class ViewController: UIViewController {
           self.garageImage.image = UIImage(data: data!)
         }
         
-        dispatch_async(dispatch_get_main_queue(), display_image)
+        DispatchQueue.main.async(execute: display_image)
       }
       
-    }
+    })
     
     task.resume()
   }
