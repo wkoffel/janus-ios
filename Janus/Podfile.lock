@@ -16,10 +16,15 @@ PODS:
 DEPENDENCIES:
   - PubNub
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - CocoaLumberjack
+    - PubNub
+
 SPEC CHECKSUMS:
   CocoaLumberjack: 97fab7ee5f507fe54445cca7ea80f926729cfd15
   PubNub: 7d68c720ef3fe5be175851c92476827550fef0d6
 
-PODFILE CHECKSUM: 9b038b893d247a8067f715c5ac1f02b7c55fe6cd
+PODFILE CHECKSUM: 8a0f5aec8908b8a1ed596668cbdc22e60171c714
 
-COCOAPODS: 1.0.0
+COCOAPODS: 1.5.3
