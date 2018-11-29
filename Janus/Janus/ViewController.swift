@@ -7,10 +7,15 @@
 //
 
 import UIKit
+import FirebaseUI
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, FUIAuthDelegate {
 
-  let IMAGE_URL = "https://clearlytech.s3.amazonaws.com/garage-image.jpg"
+  fileprivate(set) var auth:Auth?
+  fileprivate(set) var authUI: FUIAuth? //only set internally but get externally
+  fileprivate(set) var authStateListenerHandle: AuthStateDidChangeListenerHandle?
+  
+  let IMAGE_URL = "https://storage.googleapis.com/janus-223601/garage-image.jpg"
   let appDelegate = UIApplication.shared.delegate as! AppDelegate
   
   @IBOutlet weak var doorOneButton: UIButton!
@@ -20,10 +25,47 @@ class ViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
+
+    // Set up
+    self.auth = Auth.auth()
+    self.authUI = FUIAuth.defaultAuthUI()
+    self.authUI?.delegate = self
+    self.authUI?.providers = [FUIGoogleAuth(),]
+    
+    
+    self.authStateListenerHandle = self.auth?.addStateDidChangeListener { (auth, user) in
+      guard user != nil else {
+        self.loginAction(sender: self)
+        return
+      }
+    }
+    
     self.newImageReady()
   }
 
+  @IBAction func loginAction(sender: AnyObject) {
+    // Present the default login view controller provided by authUI
+    let authViewController = authUI?.authViewController();
+    self.present(authViewController!, animated: true, completion: nil)
+  }
+  
+  // Implement the required protocol method for FUIAuthDelegate
+  func authUI(_ authUI: FUIAuth, didSignInWith user: User?, error: Error?) {
+    guard let authError = error else { return }
+    
+    let errorCode = UInt((authError as NSError).code)
+    
+    switch errorCode {
+    case FUIAuthErrorCode.userCancelledSignIn.rawValue:
+      print("User cancelled sign-in");
+      break
+      
+    default:
+      let detailedError = (authError as NSError).userInfo[NSUnderlyingErrorKey] ?? authError
+      print("Login error: \((detailedError as! NSError).localizedDescription)");
+    }
+  }
+  
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
@@ -39,6 +81,7 @@ class ViewController: UIViewController {
     print("refresh image button pressed")
     refreshSpinner.startAnimating()
     appDelegate.publishCaptureImageMessage()
+    load_image(IMAGE_URL)
   }
 
   func newImageReady() {
