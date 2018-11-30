@@ -14,51 +14,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
   
-  var viewController: ViewController?
-  
-  var firestoreDB: Firestore?
-
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     FirebaseApp.configure()
 
-    // FireStore Setup
-    firestoreDB = Firestore.firestore()
-    let settings = firestoreDB!.settings
-    settings.areTimestampsInSnapshotsEnabled = true
-    firestoreDB!.settings = settings
-
     return true
-  }
-  
-  func publishDoorButtonMessage(_ doorIndex: Int) {
-    var ref: DocumentReference? = nil
-    ref = firestoreDB?.collection("door_requests").addDocument(data: [
-      "door": doorIndex,
-      "requested_at": FieldValue.serverTimestamp(),
-      "status": "pending",
-      "user": "will+fixme@koffel.org"
-    ]) { err in
-      if let err = err {
-        print("Error sending door_request: \(err)")
-      } else {
-        print("Published door_request \(doorIndex) with ID: \(ref!.documentID)")
-      }
-    }
-  }
-  
-  func publishCaptureImageMessage() {
-    var ref: DocumentReference? = nil
-    ref = firestoreDB?.collection("image_requests").addDocument(data: [
-      "requested_at": FieldValue.serverTimestamp(),
-      "status": "pending",
-      "user": "will+fixme@koffel.org"
-    ]) { err in
-      if let err = err {
-        print("Error sending image_request: \(err)")
-      } else {
-        print("Published image_request with ID: \(ref!.documentID)")
-      }
-    }
   }
   
   func applicationWillResignActive(_ application: UIApplication) {
