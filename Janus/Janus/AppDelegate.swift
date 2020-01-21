@@ -7,91 +7,17 @@
 //
 
 import UIKit
-import PubNub
+import Firebase
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, PNObjectEventListener {
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
   
-  var viewController: ViewController?
-  
-  var pubnubClient: PubNub?
-
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-    // Override point for customization after application launch.
-    let pubnubConfiguration = PNConfiguration(
-      publishKey: "pub-c-9961e1ce-7810-4c8a-8e2d-f25fc65d37b5",
-      subscribeKey: "sub-c-71ee82c4-f526-11e5-8cfb-0619f8945a4f"
-    )
-    pubnubClient = PubNub.client(with: pubnubConfiguration)
-    pubnubClient?.add(self)
-    
-    self.pubnubClient?.subscribe(toChannels: ["image_ready"], withPresence: false)
+    FirebaseApp.configure()
+
     return true
-  }
-
-  // Handle new message from one of channels on which client has been subscribed.
-  func client(_ client: PubNub, didReceiveMessage message: PNMessageResult) {
-    
-    // Handle new message stored in message.data.message
-    if message.data.actualChannel != nil {
-      
-      // Message has been received on channel group stored in
-      // message.data.subscribedChannel
-    }
-    else {
-      
-      // Message has been received on channel stored in
-      // message.data.subscribedChannel
-    }
-
-    print("Received message: \(message.data) on channel " +
-      "\((message.data.actualChannel ?? message.data.subscribedChannel)!) at " +
-      "\(message.data.timetoken)")
-
-    viewController = self.window?.rootViewController as? ViewController
-    viewController!.newImageReady()
-  }
-  
-  func publishDoorButtonMessage(_ doorIndex: Int) {
-    self.pubnubClient?.publish(["door": String(doorIndex)], toChannel: "door_button",
-      compressed: false, withCompletion: { (status) -> Void in
-       
-       if !status.isError {
-         print("published door_button \(doorIndex)")
-       }
-       else {
-         print("error publishing door_button")
-         print(status.errorData)
-         // Handle message publish error. Check 'category' property
-         // to find out possible reason because of which request did fail.
-         // Review 'errorData' property (which has PNErrorData data type) of status
-         // object to get additional information about issue.
-         //
-         // Request can be resent using: status.retry()
-      }
-    })
-  }
-  
-  func publishCaptureImageMessage() {
-    self.pubnubClient?.publish(["capture" : 1], toChannel: "capture_image",
-                               compressed: false, withCompletion: { (status) -> Void in
-                                
-                                if !status.isError {
-                                  print("published capture_image")
-                                }
-                                else {
-                                  print("error publishing capture_image")
-                                  print(status.errorData)
-                                  // Handle message publish error. Check 'category' property
-                                  // to find out possible reason because of which request did fail.
-                                  // Review 'errorData' property (which has PNErrorData data type) of status
-                                  // object to get additional information about issue.
-                                  //
-                                  // Request can be resent using: status.retry()
-                                }
-    })
   }
   
   func applicationWillResignActive(_ application: UIApplication) {

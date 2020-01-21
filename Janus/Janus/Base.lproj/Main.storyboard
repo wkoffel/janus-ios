@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -24,37 +24,75 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hFg-EL-j0K">
                                 <rect key="frame" x="0.0" y="40" width="375" height="607"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="Hw2-sr-RoJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="577"/>
-                                    </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="NNx-Eb-BDe">
-                                        <rect key="frame" x="0.0" y="577" width="375" height="30"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="s6n-Om-zsU">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="46"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="42o-h2-jwu">
-                                                <rect key="frame" x="0.0" y="0.0" width="75" height="30"/>
-                                                <state key="normal" title="Door 1"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;user&gt;" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CuK-Ey-zdU">
+                                                <rect key="frame" x="30" y="8" width="297" height="30"/>
+                                                <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Phg-zw-cTi">
+                                                <rect key="frame" x="337" y="8" width="30" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="30" id="2aI-va-uDS"/>
+                                                    <constraint firstAttribute="height" constant="30" id="49E-J7-alh"/>
+                                                </constraints>
+                                                <state key="normal" image="AccountImage"/>
+                                                <connections>
+                                                    <action selector="logoutAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a2S-NR-sfc"/>
+                                                    <action selector="refreshImageButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ry2-cC-0JD"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <edgeInsets key="layoutMargins" top="8" left="30" bottom="8" right="8"/>
+                                    </stackView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="Hw2-sr-RoJ">
+                                        <rect key="frame" x="0.0" y="46" width="375" height="495"/>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="NNx-Eb-BDe">
+                                        <rect key="frame" x="0.0" y="541" width="375" height="66"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="42o-h2-jwu">
+                                                <rect key="frame" x="20" y="8" width="50" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="lam-aL-f7V"/>
+                                                </constraints>
+                                                <state key="normal" image="LeftDoor"/>
                                                 <connections>
                                                     <action selector="doorButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xj5-2x-vuP"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kv3-2g-8ww">
-                                                <rect key="frame" x="95" y="0.0" width="78.5" height="30"/>
-                                                <state key="normal" title="Door 2"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kv3-2g-8ww">
+                                                <rect key="frame" x="120" y="8" width="50" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="gnh-4h-UJA"/>
+                                                </constraints>
+                                                <state key="normal" image="RightDoor"/>
                                                 <connections>
                                                     <action selector="doorButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7wu-CW-vne"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q7U-KN-xVJ">
-                                                <rect key="frame" x="193.5" y="0.0" width="88" height="30"/>
-                                                <state key="normal" title="Refresh"/>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="0ed-SI-U5H">
+                                                <rect key="frame" x="220" y="8" width="35" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="9K8-E6-zO0"/>
+                                                </constraints>
+                                            </activityIndicatorView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q7U-KN-xVJ">
+                                                <rect key="frame" x="305" y="8" width="50" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="xez-HU-UPe"/>
+                                                </constraints>
+                                                <state key="normal" image="RefreshImage"/>
                                                 <connections>
                                                     <action selector="refreshImageButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UhM-SC-3dm"/>
                                                 </connections>
                                             </button>
-                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="0ed-SI-U5H">
-                                                <rect key="frame" x="301.5" y="0.0" width="73.5" height="30"/>
-                                            </activityIndicatorView>
                                         </subviews>
+                                        <edgeInsets key="layoutMargins" top="8" left="20" bottom="8" right="20"/>
                                     </stackView>
                                 </subviews>
                             </stackView>
@@ -71,12 +109,20 @@
                         <outlet property="doorOneButton" destination="42o-h2-jwu" id="gO8-1y-c4m"/>
                         <outlet property="doorTwoButton" destination="kv3-2g-8ww" id="pTt-Gr-SaR"/>
                         <outlet property="garageImage" destination="Hw2-sr-RoJ" id="f19-aj-e1Z"/>
+                        <outlet property="logoutButton" destination="Phg-zw-cTi" id="8R6-Xv-Z94"/>
                         <outlet property="refreshSpinner" destination="0ed-SI-U5H" id="aPE-gh-3QE"/>
+                        <outlet property="userLabel" destination="CuK-Ey-zdU" id="89n-M9-pAO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="305" y="429"/>
+            <point key="canvasLocation" x="304.80000000000001" y="428.63568215892059"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="AccountImage" width="96" height="96"/>
+        <image name="LeftDoor" width="96" height="96"/>
+        <image name="RefreshImage" width="96" height="96"/>
+        <image name="RightDoor" width="96" height="96"/>
+    </resources>
 </document>

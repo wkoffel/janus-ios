@@ -8,5 +8,8 @@ target 'Janus' do
   platform :ios, '9.3'
 
   # Pods for Janus
-  pod "PubNub"
+  pod 'Firebase/Core'
+  pod 'Firebase/Firestore'
+  pod 'FirebaseUI/Auth'
+  pod 'FirebaseUI/Google'
 end
